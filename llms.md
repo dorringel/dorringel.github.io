@@ -1,0 +1,37 @@
+---
+# Built to /llms.txt — post list is generated from site.posts (add new posts under _posts/).
+permalink: /llms.txt
+layout: null
+markdown: false
+---
+
+# Dor Ringel
+
+> AI/ML architect building production agentic AI systems at JFrog.
+
+## About
+
+- [Home](https://dorringel.github.io/): Personal site and blog
+- [EMNLP Paper](https://aclanthology.org/D19-1400/): Cross-Cultural Transfer Learning for Text Classification (2019)
+- [SWVM Paper](https://arxiv.org/abs/2005.04418): The Structured Weighted Violations MIRA (2020)
+
+## Posts
+
+{% assign posts = site.posts | sort: 'date' | reverse %}
+{% for post in posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.description }}
+{% endfor %}
+
+## Per-post llms.txt (plain text for tools / training)
+
+One file per article — same body as the HTML post, stripped to text. After adding a post, run `python3 scripts/sync-llms-sidecars.py` and commit `_llms_sidecars/`. Full checklist: [repo README](https://github.com/dorringel/dorringel.github.io#readme).
+
+{% for post in posts %}
+- [{{ post.title }} — llms.txt]({{ post.url | append: 'llms.txt' | absolute_url }})
+{% endfor %}
+
+## Profiles
+
+- [GitHub](https://github.com/dorringel)
+- [LinkedIn](https://linkedin.com/in/dorringel)
+- [X](https://x.com/dor_ringel)

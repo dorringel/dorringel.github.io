@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="index-wrap">
+  <div class="index-inner">
+    <h1>Dor Ringel</h1>
+    <!-- <p class="tagline">Spare by design.</p> -->
+
+    <p class="bio">Building agentic AI systems since before they had a name. ML since 2014, published at <a href="https://aclanthology.org/D19-1400/">EMNLP</a>. Currently Senior ML Architect @ JFrog. Previously built and led a data group from zero at a startup. Before that, three years at Intel's data technology group. M.Sc. CS, Technion.</p>
+
+    <nav class="index-nav">
+      <a href="https://github.com/dorringel">GitHub</a>
+      <a href="https://www.linkedin.com/in/dorringel">LinkedIn</a>
+      <a href="https://x.com/dor_ringel">X</a>
+      <!-- <a href="https://www.youtube.com/watch?v=XQKHv7nlrZw">Podcast</a> -->
+      <!-- <a href="https://www.youtube.com/watch?v=pRJigqsMcjg">EMNLP Talk</a> -->
+    </nav>
+
+    {% if site.posts.size > 0 %}
+    <section class="posts">
+      {% for post in site.posts %}
+      <div class="post-entry">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        {% if post.description %}<div class="post-desc">{{ post.description }}</div>{% endif %}
+        <span class="post-date">{{ post.date | date: "%B %Y" }}</span>
+      </div>
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div>
+</div>

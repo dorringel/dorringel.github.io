@@ -1,0 +1,19 @@
+---
+---
+{% comment %} Match by path — Jekyll posts use path e.g. _posts/2026-03-25-epsiclaw.md (not `name`). {% endcomment %}
+{% assign p = site.posts | where: "path", page.post_path | first %}
+{% if p == nil -%}
+# llms sidecar: no post matched {{ page.post_path }}
+{% else -%}
+# {{ p.title }}
+
+Article: {{ p.url | absolute_url }}
+Date: {{ p.date | date: "%Y-%m-%d" }}
+{% if p.description %}Summary: {{ p.description }}
+{% endif %}
+
+---
+
+{% assign body = p.content | strip_html %}
+{{ body | replace: '&gt;', '>' | replace: '&lt;', '<' | replace: '&quot;', '"' | replace: '&#39;', "'" | replace: '&amp;', '&' }}
+{% endif %}

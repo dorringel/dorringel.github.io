@@ -1,0 +1,19 @@
+title: Dor Ringel
+description: "Spare by design."
+url: "https://dorringel.github.io"
+baseurl: ""
+
+exclude:
+  - README.md
+  - scripts
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+collections:
+  llms_sidecars:
+    output: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-redirect-from
