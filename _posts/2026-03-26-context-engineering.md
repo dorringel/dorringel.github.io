@@ -2,6 +2,7 @@
 layout: post
 title: "context engineering"
 description: "The mechanics of what actually happens when you press Enter."
+published: false
 redirect_from:
   - /context-engineering/
 ---
