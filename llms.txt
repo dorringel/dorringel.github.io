@@ -1,8 +1,6 @@
 ---
-# Built to /llms.txt — post list is generated from site.posts (add new posts under _posts/).
 permalink: /llms.txt
 layout: null
-markdown: false
 ---
 
 # Dor Ringel
